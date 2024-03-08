@@ -3,8 +3,9 @@
 ### DAFTAR TUGAS 
 | TUGAS | FILE |
 | ------| -----|
-| TUGAS 1 |  _[KLICK HERE](https://github.com/adindazaahraa/administrasijaringan/tree/main/Tugas-Pertama)_ |
-| TUGAS 2 |  _[KLICK HERE](https://github.com/adindazaahraa/administrasijaringan/tree/main/Tugas-Kedua)_ |
+| TUGAS 1 |  _[KLICK HERE](https://github.com/mayadaazzh/administrasijaringan/tree/main/Tugas-Pertama)_ |
+| TUGAS 2 |  _[KLICK HERE](https://github.com/mayadaazzh/administrasijaringan/tree/main/Tugas-Kedua)_ |
+| TUGAS 3 |  _[KLICK HERE](https://github.com/mayadaazzh/administrasijaringan/tree/main/Tugas-Ketiga)_ |
 
 ### ANGGOTA KELOMPOK
 | NAMA                          | NRP       |
