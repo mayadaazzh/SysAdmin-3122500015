@@ -64,7 +64,7 @@
 
 5. Lakukan pengecekan kesesuaian tanggal system dengan perintah 
 
-    > sudo timedatectl
+    > sudo timedatectl <br>
     ![alt text](<img/5.png>)
 
 
@@ -413,7 +413,7 @@ Berhasil terhubung, yang mana artinya database sudah bekerja dengan benar.
     ![alt text](<img/84.png>)
     Roundcube sudah berhasil terinstall
 
-8. Coba untuk login sebagai user yang telah terdaftar sebelumnya. Di sini saya login sebagao user mayada@mail.kelompok10.local
+8. Coba untuk login sebagai user yang telah terdaftar sebelumnya. Di sini saya login sebagai user mayada@mail.kelompok10.local
     ![alt text](<img/85.png>)
 
 9. Lakukan percobaan untuk mengirim pesan ke user lain.
@@ -424,6 +424,7 @@ Berhasil terhubung, yang mana artinya database sudah bekerja dengan benar.
 
 10. Lakukan pengecekan pesan masuk pada user kedua azizah@mail.kelompok10.local
     ![alt text](<img/88.png>)
+    Pesan berhasil masuk dan diterima oleh user kedua. Roundcube berhasil berjalan dengan baik.
 
 
 
