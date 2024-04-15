@@ -27,7 +27,7 @@
 
 1. Lakukan instalasi paket layanan sinkronisasi waktu
 
-    > apt install systemd-timesyncd
+    > apt install systemd-timesyncd <br>
     ![alt text](<img/1.png>)
 
 
