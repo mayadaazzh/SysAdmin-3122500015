@@ -318,9 +318,9 @@
 ![alt text](<img/53.png>)
 
 ## Install phpmyadmin
-![alt text](<img/54.png>) 
+![alt text](<img/54.png>) <br>
 lakukan pengecekan melalui www.kelompok10.local/phpmyadmin/ <br>
-![alt text](<img/55.png>)
+![alt text](<img/55.png>) <br>
 Berhasil terhubung, yang mana artinya database sudah bekerja dengan benar.
 
 ## Test Email Menggunakan Thunderbird
