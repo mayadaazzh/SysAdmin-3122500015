@@ -95,7 +95,7 @@
 
     > sudo nano /etc/apache2/sites-enabled/000-default.conf <br>
     #line 11 : change to webmaster's email <br>
-    ServerAdmin webmaster@kelompok11.local
+    ServerAdmin webmaster@kelompok10.local
     ![alt text](<img/10.png>)
 
     > sudo systemctl reload apache2
