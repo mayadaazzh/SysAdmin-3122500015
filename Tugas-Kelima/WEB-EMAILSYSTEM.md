@@ -41,7 +41,7 @@
     
     Mengaktifkan NTP Client untuk sinkronisasi waktu
 
-    > sudo timedatectl set-ntp true
+    > sudo timedatectl set-ntp true <br>
 
     ![alt text](<img/2.png>)
 
@@ -51,14 +51,14 @@
     > sudo nano /etc/systemd/timesyncd.conf <br>
     #Ubahlah line 16 <br>
     [Time] <br>
-    NTP=0.id.pool.ntp.org
+    NTP=0.id.pool.ntp.org <br>
     ![alt text](<img/3.png>)
 
 
 4. Restart layanan sinkronisasi waktu dan pastikan layanan berjalan dengan benar
 
     > sudo systemctl restart systemd-timesyncd <br>
-    sudo systemctl status systemd-timesyncd
+    sudo systemctl status systemd-timesyncd <br>
     ![alt text](<img/4.png>)
 
 
@@ -72,7 +72,7 @@
 
 1. Install Apache2
 
-    > sudo apt -y install apache2
+    > sudo apt -y install apache2 <br>
     ![alt text](<img/6.png>)
 
 
@@ -80,34 +80,34 @@
 
     > sudo nano /etc/apache2/conf-enabled/security.conf <br>
     #line 12 : change <br>
-    ServerTokens Prod
+    ServerTokens Prod <br>
     ![alt text](<img/7.png>)
 
     > sudo nano /etc/apache2/mods-enabled/dir.conf <br>
     #add file name that it can access only with directory's name <br>
-    DirectoryIndex index.html index.htm index.php(untuk membuka file index roundcube)
+    DirectoryIndex index.html index.htm index.php(untuk membuka file index roundcube) <br>
     ![alt text](<img/8.png>)
 
     > sudo nano /etc/apache2/apache2.conf <br>
     #line 70 : add to specify server name <br>
-    ServerName www.kelompok10.local
+    ServerName www.kelompok10.local <br>
     ![alt text](<img/9.png>)
 
     > sudo nano /etc/apache2/sites-enabled/000-default.conf <br>
     #line 11 : change to webmaster's email <br>
-    ServerAdmin webmaster@kelompok10.local
+    ServerAdmin webmaster@kelompok10.local <br>
     ![alt text](<img/10.png>)
 
     > sudo systemctl reload apache2
 
-3. Melakukan test ke web browser
+3. Melakukan test ke web browser <br>
 
     ![alt text](<img/11.png>)
 
 ### Install PHP 8.2
 
 1.  Install dengan perintah berikut
-    > apt -y install php8.2 php8.2-mbstring php-pear
+    > apt -y install php8.2 php8.2-mbstring php-pear <br>
     ![alt text](<img/12.png>)
 
 2.  Lakukan pengecekan dan testing apakah sudah berhasil terinstall
@@ -119,7 +119,7 @@
 ### Install PHP-FM
 
 1. Install dengan perintah berikut
-    > apt -y install php-fpm
+    > apt -y install php-fpm <br>
     ![alt text](<img/14.png>)
 
 2. Mengkonfigurasi PHP-FM pada file konfigurasi Apache
@@ -129,45 +129,45 @@
     SetHandler "proxy:unix:/var/run/php/php8.2-fpm.sock|fcgi://localhost/" </FilesMatch> <br>
     ![alt text](<img/15.png>)
 
-    > a2enmod proxy_fcgi setenvif
+    > a2enmod proxy_fcgi setenvif <br>
     ![alt text](<img/16.png>)
 
-    > a2enconf php8.2-fpm
+    > a2enconf php8.2-fpm <br>
     ![alt text](<img/17.png>)
 
     > systemctl restart php8.2-fpm apache2
 
 3. Melakukan test validasi terhadap PHP-FM dengan membuat file info.php di root document 
 
-    > echo '<?php phpinfo(); ?>' > /var/www/html/info.php
+    > echo '<?php phpinfo(); ?>' > /var/www/html/info.php <br>
     ![alt text](<img/18.png>)
 
-4. Lalu lakukan test di browser
+4. Lalu lakukan test di browser <br>
     ![alt text](<img/19.png>)
 
 ## Database System : MariaDB
 
 1. Lakukan instalasi Maria DB 10.11
-    > apt -y install mariadb-server
+    > apt -y install mariadb-server <br>
     ![alt text](<img/20.png>)
 
     > nano /etc/mysql/mariadb.conf.d/50-server.cnf <br>
     #line 95 : confirm default charset <br>
     #if use 4 bytes UTF-8, specify [utf8mb4] <br>
     character-set-server = utf8mb4 <br>
-    collation-server = utf8mb4_general_ci
+    collation-server = utf8mb4_general_ci <br>
     ![alt text](<img/21.png>)
 
     > systemctl restart mariadb
 
 2. Inisial Konfigurasi dan testing database MariaDB Server
 
-    > mysql_secure_installation
+    > mysql_secure_installation <br>
     ![alt text](<img/22.png>)
     ![alt text](<img/23.png>)
     ![alt text](<img/24.png>)
 
-    > mysql
+    > mysql <br>
     ![alt text](<img/25.png>)
     ![alt text](<img/26.png>)
     ![alt text](<img/27.png>)
@@ -177,44 +177,44 @@
 
 1. install dengan perintah berikut
     > apt -y install postfix sasl2-bin <br>
-    cp /usr/share/postfix/main.cf.dist /etc/postfix/main.cf
+    cp /usr/share/postfix/main.cf.dist /etc/postfix/main.cf <br>
     ![alt text](<img/29.png>)
 
     > nano /etc/posfix/main.cf <br>
-    - #line 82 : uncomment <br> mail_owner = postfix
+    - #line 82 : uncomment <br> mail_owner = postfix <br>
     ![alt text](<img/30.png>)
-    - #line 98 : uncomment and specify hostname <br> myhostname = mail.kelompok10.local
+    - #line 98 : uncomment and specify hostname <br> myhostname = mail.kelompok10.local <br>
     ![alt text](<img/31.png>)
-    - #line 106 : uncomment and specify domainname <br> mydomain = kelompok10.local
+    - #line 106 : uncomment and specify domainname <br> mydomain = kelompok10.local <br>
     ![alt text](<img/32.png>)
     - #line 127 : uncomment <br>
-    myorigin = $mydomain
+    myorigin = $mydomain <br>
     ![alt text](<img/33.png>)
     - #line 141 : uncomment <br>
-    inet_interfaces = all
+    inet_interfaces = all <br>
     ![alt text](<img/34.png>)
     - #line 189 : uncomment <br>
-    mydestination = $myhostname, localhost.$mydomain, localhost, $mydomain
+    mydestination = $myhostname, localhost.$mydomain, localhost, $mydomain <br>
     ![alt text](<img/35.png>)
     - #line 232 : uncomment <br>
-    local_recipient_maps = unix:passwd.byname $alias_maps
+    local_recipient_maps = unix:passwd.byname $alias_maps <br>
     ![alt text](<img/36.png>)
     - #line 277 : uncomment <br>
-    mynetworks_style = subnet
+    mynetworks_style = subnet <br>
     - #line 294 : add your local network <br>
-    mynetworks = 127.0.0.0/8, 10.0.0.0/24, 192.168.0.0/16
+    mynetworks = 127.0.0.0/8, 10.0.0.0/24, 192.168.0.0/16 <br>
     ![alt text](<img/37.png>)
     - #line 416 : uncomment <br>
     alias_maps = hash:/etc/aliases
     - #line 427 : uncomment <br>
-    alias_database = hash:/etc/aliases
+    alias_database = hash:/etc/aliases <br>
     ![alt text](<img/38.png>)
     - #line 449 : uncomment <br>
-    home_mailbox = Maildir/
+    home_mailbox = Maildir/ <br>
     ![alt text](<img/39.png>)
     - #line 585: comment out and add <br>
     #smtpd_banner = $myhostname ESMTP $mail_name (Debian/GNU) <br>
-    smtpd_banner = $myhostname ESMTP
+    smtpd_banner = $myhostname ESMTP <br>
     ![alt text](<img/40.png>)
     - #line 659 : add <br>
     sendmail_path = /usr/sbin/postfix
@@ -227,7 +227,7 @@
     - #line 679 : comment out <br>
     #html_directory =
     - #line 683 : comment out<br>
-    #manpage_directory =
+    #manpage_directory = <br>
     ![alt text](<img/41.png>)
     - #line 688 : comment out <br>
     #sample_directory =
@@ -249,11 +249,11 @@
     smtpd_sasl_auth_enable = yes <br>
     smtpd_sasl_security_options = noanonymous <br>
     smtpd_sasl_local_domain = $myhostname <br>
-    smtpd_recipient_restrictions = permit_mynetworks, permit_auth_destination,permit_sasl_authenticated, reject
+    smtpd_recipient_restrictions = permit_mynetworks, permit_auth_destination,permit_sasl_authenticated, reject <br>
     ![alt text](<img/42.png>)
     ![alt text](<img/43.png>)
     > newaliases <br>
-    systemctl restart postfix
+    systemctl restart postfix <br>
     ![alt text](<img/44.png>)
 
 2. Menambahkan konfigurasi anti spam
@@ -265,7 +265,7 @@
     #rejects senders that domain name set in FROM are not registered in DNS or not registered with FQDN <br>
     smtpd_sender_restrictions = permit_mynetworks, reject_unknown_sender_domain, reject_non_fqdn_sender <br> <br>
     #reject hosts that domain name set in FROM are not registered in DNS or not registered with FQDN when your SMTP server receives HELO command <br>
-    smtpd_helo_restrictions = permit_mynetworks, reject_unknown_hostname, reject_non_fqdn_hostname, reject_invalid_hostname, permit
+    smtpd_helo_restrictions = permit_mynetworks, reject_unknown_hostname, reject_non_fqdn_hostname, reject_invalid_hostname, permit <br>
     ![alt text](<img/45.png>)
 
     > systemctl restart postfix
@@ -273,12 +273,12 @@
 ## DOVECOT : IMAP4 (TCP 143) and POP3 (TCP110) Server
 
 1. Lakukan instalasi Dovecot Server
-    >  apt -y install dovecot-core dovecot-pop3d dovecot-imapd
+    >  apt -y install dovecot-core dovecot-pop3d dovecot-imapd <br>
     ![alt text](<img/46.png>)
 
     > nano /etc/dovecot/dovecot.conf <br>
     #line 30 : uncomment <br>
-    listen = *, ::
+    listen = *, :: <br>
     ![alt text](<img/47.png>)
 
     > nano /etc/dovecot/conf.d/10-auth.conf <br>
@@ -286,12 +286,12 @@
     disable_plaintext_auth = no <br>
     ![alt text](<img/48.png>)
     #line 100 : add <br>
-    auth_mechanisms = plain login
+    auth_mechanisms = plain login <br>
     ![alt text](<img/49.png>)
 
     > nano /etc/dovecot/conf.d/10-mail.conf <br>
     #line 30 : change to Maildir <br>
-    mail_location = maildir:~/Maildir
+    mail_location = maildir:~/Maildir <br>
     ![alt text](<img/50.png>)
 
     > nano /etc/dovecot/conf.d/10-master.conf <br>
@@ -308,7 +308,7 @@
 
 2. FINAL CHECK untuk semua SERVICES :
     > netstat -a| grep LISTEN <br>
-    Akan terlihat hasilnya seperti di bawah, dengan status Server (LISTEN) : MariaDB(MySQL), IMAP,POP3, DNS(domain), IMAPS, POP3S, Postfix (SMTP)
+    Akan terlihat hasilnya seperti di bawah, dengan status Server (LISTEN) : MariaDB(MySQL), IMAP,POP3, DNS(domain), IMAPS, POP3S, Postfix (SMTP) <br>
     ![alt text](<img/52.png>)
 
 ### Melakukan Cek terhadap Layanan Posfix
@@ -318,15 +318,15 @@
 ![alt text](<img/53.png>)
 
 ## Install phpmyadmin
-![alt text](<img/54.png>)
-lakukan pengecekan melalui www.kelompok10.local/phpmyadmin/
+![alt text](<img/54.png>) 
+lakukan pengecekan melalui www.kelompok10.local/phpmyadmin/ <br>
 ![alt text](<img/55.png>)
 Berhasil terhubung, yang mana artinya database sudah bekerja dengan benar.
 
 ## Test Email Menggunakan Thunderbird
 
 1. Install Thunderbird terlebih dahulu
-    > apt-get install thunderbird
+    > apt-get install thunderbird <br>
     ![alt text](<img/56.png>)
 
 2. Membuat user pertama
@@ -339,7 +339,7 @@ Berhasil terhubung, yang mana artinya database sudah bekerja dengan benar.
 
 4. Testing kirim email dari user pertama ke user kedua
     ![alt text](<img/62.png>)
-    pesan berhasil terkirim ke user azizah@mail.kelompok10.local
+    pesan berhasil terkirim ke user azizah@mail.kelompok10.local <br>
     ![alt text](<img/63.png>)
 
 5. Testing kirim email dari user kedua ke user pertama
@@ -353,60 +353,60 @@ Berhasil terhubung, yang mana artinya database sudah bekerja dengan benar.
     ![alt text](<img/66.png>)
 
 2. Lakukan config 
-    > nano /etc/roundcube/config.inc.php
+    > nano /etc/roundcube/config.inc.php <br>
     ![alt text](<img/67.png>)
 
 3. Lakukan config file apache pada roundcube, uncomment line 3 dan hapus public_html path.
-    > nano /etc/rouncube/apache.conf
+    > nano /etc/rouncube/apache.conf <br>
     ![alt text](<img/68.png>)
 
 4. Lakukan symlink pada folder roundcube ke folder dimana aplikasi ini dionline kan
     ![alt text](<img/83.png>)
 
 5. Tambahkan Servername dan DocumentRoot pada file:
-    > nano /etc/apache2/sites-available/000-default.conf
+    > nano /etc/apache2/sites-available/000-default.conf <br>
     ![alt text](<img/69.png>)
 
 6. Lakukan rekonfigurasi
     > sudo dpkg-reconfigure roundcube-core
     
-    >klik ok
+    >klik ok <br>
     ![alt text](<img/70.png>)
 
-    >pilih language
+    >pilih language <br>
     ![alt text](<img/71.png>)
 
-    >klik yes
+    >klik yes <br>
     ![alt text](<img/72.png>)
 
-    >pilih TCP IP
+    >pilih TCP IP <br>
     ![alt text](<img/73.png>)
 
-    >pilih localhost
+    >pilih localhost <br>
     ![alt text](<img/74.png>)
 
-    >port 3306, klik ok
+    >port 3306, klik ok <br>
     ![alt text](<img/75.png>)
 
-    >pilih mysql_native_password
-    ![alt text](<img/76.png>)
+    >pilih mysql_native_password <br>
+    ![alt text](<img/76.png>) 
 
-    >database name default
+    >database name default <br>
     ![alt text](<img/77.png>)
 
-    >username default
+    >username default <br>
     ![alt text](<img/78.png>)
 
-    >password 12345
+    >password 12345 <br>
     ![alt text](<img/79.png>)
 
-    >admin root
+    >admin root <br>
     ![alt text](<img/80.png>)
 
-    >pilih apache2
+    >pilih apache2 <br>
     ![alt text](<img/81.png>)
 
-    >klik ya untuk restart
+    >klik ya untuk restart <br>
     ![alt text](<img/82.png>)
 
 7. Lakukan pengecekan roundcube dengan mengetikkan www.kelompok10.local/
@@ -419,7 +419,7 @@ Berhasil terhubung, yang mana artinya database sudah bekerja dengan benar.
 9. Lakukan percobaan untuk mengirim pesan ke user lain.
     ![alt text](<img/86.png>)
 
-    >berhasil terkirim ke user tujuan
+    >berhasil terkirim ke user tujuan <br>
     ![alt text](<img/87.png>)
 
 10. Lakukan pengecekan pesan masuk pada user kedua azizah@mail.kelompok10.local
