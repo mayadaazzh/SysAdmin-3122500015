@@ -7,7 +7,7 @@
 | TUGAS 2 |  _[KLICK HERE](https://github.com/mayadaazzh/SysAdmin-3122500015/tree/main/Tugas-Kedua)_ |
 | TUGAS 3 |  _[KLICK HERE](https://github.com/mayadaazzh/SysAdmin-3122500015/tree/main/Tugas-Ketiga)_ |
 | TUGAS 4 |  _[KLICK HERE](https://github.com/mayadaazzh/SysAdmin-3122500015/tree/main/Tugas-Keempat)_ |
-
+| TUGAS 5 |  _[KLICK HERE](https://github.com/mayadaazzh/SysAdmin-3122500015/tree/main/Tugas-Kelima)_ |
 
 ### ANGGOTA KELOMPOK
 | NAMA                          | NRP       |
