@@ -426,6 +426,59 @@ Berhasil terhubung, yang mana artinya database sudah bekerja dengan benar.
     ![alt text](<img/88.png>)
     Pesan berhasil masuk dan diterima oleh user kedua. Roundcube berhasil berjalan dengan baik.
 
+### J. PERCOBAAN MAILSERVER JARINGAN JARKOM C307
+1. Pastikan sudah terkoneksi dengan ethernet LAB JARKOM
+2. Lakukan Ping ke 1.1.1.1 pastikan sudah terhubung ke dns 1.1.1.1
+3. Setting Virtual Box Ke Dalam Network Bridge dengan cara pergi ke setting/machine >> Network
+   
+   <img src="../Tugas-UTS/img/12.3.png" width="70%" height="auto"><br>
+   
+4. Supaya DNS Kita dapat diresolve oleh kelompok lain lakukan Konfigurasi Berikut
+5. Setting interfaces:
+   
+   <img src="../Tugas-UTS/img/12.5.png" width="90%" height="auto"><br>
+
+6. Setting named.conf.options:
+   
+   sudo nano /etc/bind/named.conf.options
+   
+   <img src="../Tugas-UTS/img/12.6.1.png" width="90%" height="auto"><br>
+   <img src="../Tugas-UTS/img/12.6.2.png" width="90%" height="auto"><br>
+   <img src="../Tugas-UTS/img/12.6.3.png" width="90%" height="auto"><br>
+7. Setting resolv.conf:
+   
+   sudo nano /etc/resolv.conf
+   
+   <img src="../Tugas-UTS/img/12.7.1.png" width="90%" height="auto"><br>
+   <img src="../Tugas-UTS/img/12.7.2.png" width="90%" height="auto"><br>
+8. Lakukan sudo restart systemctl networking Setelahnya
+   
+   sudo systemctl restart networking
+   
+9.  Lakukan Ping Detik.com atau IP Kelompok lain disini 192.168.10.10
+    
+    ping detik.com
+    nslookup ns.kelompok2.local
+    
+10. Buat DHCP Server Bridge Pada Aplikasi WINBOX. Connect Ke Server/Router Klik DHCP SETUP, Pilih Bridge Interface
+    
+    <img src="../Tugas-UTS/img/12.10.jpg" width="90%" height="auto"><br>
+
+11. Masukkan dns
+    
+    <img src="../Tugas-UTS/img/12.11.jpg" width="90%" height="auto"><br>
+
+12. Cek Mail Server
+    
+    nslookup mail.kelompok10.local
+    
+13. nslookup -q=MX kelompok2.local
+    <!-- <img src="../Tugas-UTS/img" width="90%" height="auto"><br> -->
+14. Buka Mail Server Kelompok Kita
+    <!-- <img src="../Tugas-UTS/img" width="90%" height="auto"><br> -->
+15. Lakukan Pengiriman Ke Kelompok Lainnya
+    
+    <img src="../Tugas-UTS/img/12.15.jpg" width="90%" height="auto"><br>
 
 
 
