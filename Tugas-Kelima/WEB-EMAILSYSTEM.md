@@ -426,7 +426,7 @@ Berhasil terhubung, yang mana artinya database sudah bekerja dengan benar.
     ![alt text](<img/88.png>)
     Pesan berhasil masuk dan diterima oleh user kedua. Roundcube berhasil berjalan dengan baik.
 
-### J. PERCOBAAN MAILSERVER JARINGAN JARKOM C307
+## PERCOBAAN MAILSERVER JARINGAN JARKOM C307
 1. Pastikan sudah terkoneksi dengan ethernet LAB JARKOM
 2. Lakukan Ping ke 1.1.1.1 pastikan sudah terhubung ke dns 1.1.1.1
 3. Setting Virtual Box Ke Dalam Network Bridge dengan cara pergi ke setting/machine >> Network
