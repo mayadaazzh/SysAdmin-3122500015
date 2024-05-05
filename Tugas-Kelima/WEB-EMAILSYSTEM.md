@@ -431,26 +431,26 @@ Berhasil terhubung, yang mana artinya database sudah bekerja dengan benar.
 2. Lakukan Ping ke 1.1.1.1 pastikan sudah terhubung ke dns 1.1.1.1
 3. Setting Virtual Box Ke Dalam Network Bridge dengan cara pergi ke setting/machine >> Network
    
-   <img src="../img/12.3.png" width="70%" height="auto"><br>
+   <img src="../Tugas-Kelima/img/12.3.png" width="70%" height="auto"><br>
    
 4. Supaya DNS Kita dapat diresolve oleh kelompok lain lakukan Konfigurasi Berikut
 5. Setting interfaces:
    
-   <img src="../img/12.5.png" width="90%" height="auto"><br>
+   <img src="../Tugas-Kelima/img/12.5.png" width="90%" height="auto"><br>
 
 6. Setting named.conf.options:
    
    sudo nano /etc/bind/named.conf.options
    
-   <img src="../img/12.6.1.png" width="90%" height="auto"><br>
-   <img src="../img/12.6.2.png" width="90%" height="auto"><br>
-   <img src="../img/12.6.3.png" width="90%" height="auto"><br>
+   <img src="../Tugas-Kelima/img/12.6.1.png" width="90%" height="auto"><br>
+   <img src="../Tugas-Kelima/img/12.6.2.png" width="90%" height="auto"><br>
+   <img src="../Tugas-Kelima/img/12.6.3.png" width="90%" height="auto"><br>
 7. Setting resolv.conf:
    
    sudo nano /etc/resolv.conf
    
-   <img src="../img/12.7.1.png" width="90%" height="auto"><br>
-   <img src="../img/12.7.2.png" width="90%" height="auto"><br>
+   <img src="../Tugas-Kelima/img/12.7.1.png" width="90%" height="auto"><br>
+   <img src="../Tugas-Kelima/img/12.7.2.png" width="90%" height="auto"><br>
 8. Lakukan sudo restart systemctl networking Setelahnya
    
    sudo systemctl restart networking
@@ -462,11 +462,11 @@ Berhasil terhubung, yang mana artinya database sudah bekerja dengan benar.
     
 10. Buat DHCP Server Bridge Pada Aplikasi WINBOX. Connect Ke Server/Router Klik DHCP SETUP, Pilih Bridge Interface
     
-    <img src="../img/12.10.jpg" width="90%" height="auto"><br>
+    <img src="../Tugas-Kelima/img/12.10.jpg" width="90%" height="auto"><br>
 
 11. Masukkan dns
     
-    <img src="../img/12.11.jpg" width="90%" height="auto"><br>
+    <img src="../Tugas-Kelima/img/12.11.jpg" width="90%" height="auto"><br>
 
 12. Cek Mail Server
     
