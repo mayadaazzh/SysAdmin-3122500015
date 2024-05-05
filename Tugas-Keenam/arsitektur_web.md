@@ -7,7 +7,7 @@
 
 <div align="center">
   <h3>Disusun Oleh:</h3>
-  <p align="center">Adinda Zahra Qariru 3122500020</p>
+  <p align="center">Mayada Azizah 3122500015</p>
 </div>
 
 <div align="center">
