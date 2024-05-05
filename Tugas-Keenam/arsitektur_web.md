@@ -56,7 +56,7 @@ Berikut adalah gambaran singkat tentang bagaimana komponen-komponen browser beke
 
 #
 
-<h2 align="center">Web Server</h2>
+## Web Server
 <p align="center">
   <img src="../Tugas-Keenam/img/web_server.JPG" width="80%" height="auto">
 </p>
