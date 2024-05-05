@@ -478,7 +478,7 @@ Berhasil terhubung, yang mana artinya database sudah bekerja dengan benar.
     <!-- <img src="../Tugas-UTS/img" width="90%" height="auto"><br> -->
 15. Lakukan Pengiriman Ke Kelompok Lainnya
     
-    <img src="../img/12.15.jpg" width="90%" height="auto"><br>
+    <img src="../Tugas-Kelima/img/12.15.jpg" width="90%" height="auto"><br>
     
 
 ## ANALISIS MIME(HEADER), POP3, DAN SMTP
