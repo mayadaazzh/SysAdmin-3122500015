@@ -431,26 +431,26 @@ Berhasil terhubung, yang mana artinya database sudah bekerja dengan benar.
 2. Lakukan Ping ke 1.1.1.1 pastikan sudah terhubung ke dns 1.1.1.1
 3. Setting Virtual Box Ke Dalam Network Bridge dengan cara pergi ke setting/machine >> Network
    
-   <img src="../Tugas-UTS/img/12.3.png" width="70%" height="auto"><br>
+   <img src="../img/12.3.png" width="70%" height="auto"><br>
    
 4. Supaya DNS Kita dapat diresolve oleh kelompok lain lakukan Konfigurasi Berikut
 5. Setting interfaces:
    
-   <img src="../Tugas-UTS/img/12.5.png" width="90%" height="auto"><br>
+   <img src="../img/12.5.png" width="90%" height="auto"><br>
 
 6. Setting named.conf.options:
    
    sudo nano /etc/bind/named.conf.options
    
-   <img src="../Tugas-UTS/img/12.6.1.png" width="90%" height="auto"><br>
-   <img src="../Tugas-UTS/img/12.6.2.png" width="90%" height="auto"><br>
-   <img src="../Tugas-UTS/img/12.6.3.png" width="90%" height="auto"><br>
+   <img src="../img/12.6.1.png" width="90%" height="auto"><br>
+   <img src="../img/12.6.2.png" width="90%" height="auto"><br>
+   <img src="../img/12.6.3.png" width="90%" height="auto"><br>
 7. Setting resolv.conf:
    
    sudo nano /etc/resolv.conf
    
-   <img src="../Tugas-UTS/img/12.7.1.png" width="90%" height="auto"><br>
-   <img src="../Tugas-UTS/img/12.7.2.png" width="90%" height="auto"><br>
+   <img src="../img/12.7.1.png" width="90%" height="auto"><br>
+   <img src="../img/12.7.2.png" width="90%" height="auto"><br>
 8. Lakukan sudo restart systemctl networking Setelahnya
    
    sudo systemctl restart networking
@@ -462,11 +462,11 @@ Berhasil terhubung, yang mana artinya database sudah bekerja dengan benar.
     
 10. Buat DHCP Server Bridge Pada Aplikasi WINBOX. Connect Ke Server/Router Klik DHCP SETUP, Pilih Bridge Interface
     
-    <img src="../Tugas-UTS/img/12.10.jpg" width="90%" height="auto"><br>
+    <img src="../img/12.10.jpg" width="90%" height="auto"><br>
 
 11. Masukkan dns
     
-    <img src="../Tugas-UTS/img/12.11.jpg" width="90%" height="auto"><br>
+    <img src="../img/12.11.jpg" width="90%" height="auto"><br>
 
 12. Cek Mail Server
     
@@ -478,7 +478,7 @@ Berhasil terhubung, yang mana artinya database sudah bekerja dengan benar.
     <!-- <img src="../Tugas-UTS/img" width="90%" height="auto"><br> -->
 15. Lakukan Pengiriman Ke Kelompok Lainnya
     
-    <img src="../Tugas-UTS/img/12.15.jpg" width="90%" height="auto"><br>
+    <img src="../img/12.15.jpg" width="90%" height="auto"><br>
     
 
 ## ANALISIS MIME(HEADER), POP3, DAN SMTP
@@ -486,7 +486,7 @@ Berhasil terhubung, yang mana artinya database sudah bekerja dengan benar.
 Berikut adalah analisis singkat untuk MIME (Multipurpose Internet Mail Extensions), POP3 (Post Office Protocol version 3), dan SMTP (Simple Mail Transfer Protocol):
 
 <p align="center">
-  <img src="../Tugas-UTS/img" width="80%" height="auto">
+  <img src="../img" width="80%" height="auto">
 </p>
 <p align="center">
   MIME
@@ -504,7 +504,7 @@ Berikut adalah analisis singkat untuk MIME (Multipurpose Internet Mail Extension
   MIME digunakan untuk menyampaikan email yang mengandung lampiran, gambar, format teks kaya, dan konten multimedia lainnya. Ini memungkinkan pengguna untuk mengirim pesan email yang lebih kaya dan lebih bervariasi.
 
 <p align="center">
-  <img src="../Tugas-UTS/img" width="80%" height="auto">
+  <img src="../img" width="80%" height="auto">
 </p>
 <p align="center">
   POP3
@@ -527,7 +527,7 @@ Berikut adalah analisis singkat untuk MIME (Multipurpose Internet Mail Extension
    - Standar POP3 tidak menyertakan fitur untuk menyinkronkan pesan di antara beberapa perangkat.
 
 <p align="center">
-  <img src="../Tugas-UTS/img" width="80%" height="auto">
+  <img src="../img" width="80%" height="auto">
 </p>
 <p align="center">
   SMTP
