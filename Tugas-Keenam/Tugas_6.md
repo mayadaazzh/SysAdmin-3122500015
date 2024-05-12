@@ -177,7 +177,7 @@ Docker adalah platform kontainerisasi yang paling populer dan sering digunakan. 
 7. Open browser http://localhost:3000 dan lihat hasilnya
 
     <p align="center">
-    <img src="img/8.png" width="80%" height="auto">
+    <img src="img/9.png" width="80%" height="auto">
     </p>
 
 # 
