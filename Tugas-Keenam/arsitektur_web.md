@@ -87,3 +87,159 @@ Tambahan:
 - Siklus permintaan-respons web dapat diulang beberapa kali untuk memuat semua sumber daya yang membentuk halaman web.
 - Siklus permintaan-respons web dapat digunakan untuk mengirimkan data ke server, seperti saat pengguna mengirimkan formulir.
 - Siklus permintaan-respons web dapat digunakan untuk menerima data dari server, seperti saat pengguna memuat halaman web.
+
+#
+
+## Virtualization vs Containerization
+
+Virtualisasi dan Kontainerisasi adalah dua teknologi yang digunakan untuk mengisolasi dan menjalankan aplikasi atau lingkungan perangkat lunak secara independen di dalam lingkungan yang terisolasi. Meskipun keduanya memiliki tujuan yang serupa, yaitu memungkinkan pengguna untuk menjalankan aplikasi secara efisien dan aman, namun keduanya memiliki perbedaan dalam pendekatan dan implementasinya. 
+
+- **Virtualisasi:** <br>
+    - Virtualisasi melibatkan pembuatan lingkungan virtual yang terisolasi dari host fisik menggunakan hypervisor. - Hypervisor memungkinkan beberapa mesin virtual berjalan di atas satu host fisik. 
+    - Setiap mesin virtual memiliki sistem operasi, ruang disk, memori, dan sumber daya lainnya yang terpisah. 
+    - Virtualisasi memberikan isolasi yang kuat antara mesin virtual yang berbeda, sehingga mengizinkan pengguna untuk menjalankan berbagai jenis sistem operasi dan aplikasi di satu perangkat keras fisik.
+    - Contoh teknologi virtualisasi termasuk <b> VMware, VirtualBox, dan Microsoft Hyper-V </b>.
+    
+- **Kontainerisasi:** <br>
+    - Kontainerisasi melibatkan pembuatan kontainer yang berisi aplikasi dan dependensinya, yang diisolasi dari lingkungan host menggunakan fitur isolasi kernel Linux seperti namespaces dan cgroups.
+    - Kontainer membagi kernel sistem operasi yang sama dengan host fisik, tetapi memiliki file sistem, proses, dan ruang pengguna yang terpisah.
+    - Kontainer lebih ringan dan lebih cepat dibandingkan dengan mesin virtual karena mereka tidak memerlukan sistem operasi yang lengkap.
+    - Kontainer memungkinkan aplikasi untuk berjalan di berbagai lingkungan seperti pengembangan, pengujian, dan produksi tanpa perubahan yang signifikan.
+    - Contoh teknologi kontainerisasi termasuk <b> Docker, Kubernetes, dan Podman </b>.
+
+### Docker
+Docker adalah platform kontainerisasi yang paling populer dan sering digunakan. Docker memungkinkan pengguna untuk membuat, menjalankan, dan mendistribusikan kontainer dengan mudah. Docker menggunakan teknologi kontainerisasi untuk menyediakan lingkungan yang terisolasi untuk menjalankan aplikasi dan layanan. Dengan Docker, pengguna dapat membuat kontainer yang mengemas aplikasi bersama dengan dependensinya, sehingga memungkinkan aplikasi tersebut berjalan di berbagai lingkungan tanpa adanya perubahan yang signifikan. Docker juga menyediakan alat manajemen kontainer yang kuat, seperti Docker Compose dan Docker Swarm, untuk mengelola dan menyebarkan kontainer secara efisien. Dengan demikian, Docker memanfaatkan konsep kontainerisasi untuk memberikan solusi yang efisien dan portabel bagi pengembang dan operator.
+
+### Install Docker Engine, Uninstall Conflicted
+
+1. Hapus Docker.io dan dependency bawaan dari DEBIAN
+
+        for pkg in docker.io docker-doc docker-compose podman-docker containerd runc; do sudo apt-get remove $pkg; done
+
+    <p align="center">
+    <img src="img/1.png" width="80%" height="auto">
+    </p>
+
+2. Tambahkan Docker's official GPG key
+
+        sudo apt-get update
+        sudo apt-get install ca-certificates curl
+        sudo install -m 0755 -d /etc/apt/keyrings
+        sudo curl -fsSL https://download.docker.com/linux/debian/gpg -o /etc/apt/keyrings/docker.asc
+        sudo chmod a+r /etc/apt/keyrings/docker.asc
+
+    <p align="center">
+    <img src="img/2.png" width="80%" height="auto">
+    </p>
+
+3. Tambahkan repositori ke Apt sources
+
+         echo \
+         "deb [arch=$(dpkg --print-architecture) signed-by=/etc apt/keyrings/docker.asc] https://download.docker.com/linux/debian \ 
+         $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
+         sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+         sudo apt-get update
+
+    <p align="center">
+    <img src="img/3.png" width="80%" height="auto">
+    </p>
+
+4. Install Docker Official Package
+
+         sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+    
+    <p align="center">
+    <img src="img/4.png" width="80%" height="auto">
+    </p>
+        
+5. Run a Container
+
+        sudo docker run hello-world
+    
+    <p align="center">
+    <img src="img/5.png" width="80%" height="auto">
+    </p>
+
+6. Coba Clone example hasil docker
+
+        git clone https://github.com/alfiyansys/docker-examples.git
+        docker build -t example .
+        docker run -p 3000:80 example
+
+    <p align="center">
+    <img src="img/6.png" width="80%" height="auto">
+    </p>
+
+    <p align="center">
+    <img src="img/7.png" width="80%" height="auto">
+    </p>
+
+7. Open browser http://localhost:3000 dan lihat hasilnya
+
+    <p align="center">
+    <img src="img/8.png" width="80%" height="auto">
+    </p>
+
+# 
+
+## Apache2 + Dns Resolver + Docker Uptime Kuma Package
+
+1. Git Clone Uptime Kuma
+
+        git clone https://github.com/louislam/uptime-kuma.git
+        cd uptime-kuma
+
+2. Coba jalankan
+
+        sudo docker compose up
+        sudo docker ps -a
+
+    <p align="center">
+    <img src="img/12.png" width="80%" height="auto">
+    </p>
+
+3. Cek pada port berjalan yaitu 3001
+        
+        localhost:3001
+
+    <p align="center">
+    <img src="img/9.png" width="80%" height="auto">
+    </p>
+
+
+### Bagaimana jika menggunakan url monitoring.kelompok10.local saat mengaksesnya?
+
+1. Konfigurasi file /var/lib/bind/db.kelompok10.local
+
+    <p align="center">
+    <img src="img/11.png" width="80%" height="auto">
+    </p>
+
+        sudo sytemctl restart named
+
+2. Install beberapa Package berikut
+
+        sudo a2enmod
+
+    Masukkan Package berikut ``proxy proxy_ajp proxy_http rewrite deflate headers proxy_balancer proxy_connect proxy_html``
+
+    <p align="center">
+    <img src="img/13.png" width="80%" height="auto">
+    </p>
+
+
+3. Lakukan Konfigurasi pada Apache2
+
+        sudo nano /etc/apache2/sites-enabled/000-default.conf
+
+    <p align="center">
+    <img src="img/14.png" width="80%" height="auto">
+    </p>
+
+        sudo sytemctl restart apache2
+
+4. Lakukan pengecekan pada web browser, dengan mengetikkan ``monitoring.kelompok10.local``
+
+    <p align="center">
+    <img src="img/15.png" width="80%" height="auto">
+    </p>
