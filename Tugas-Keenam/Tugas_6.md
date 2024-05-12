@@ -203,7 +203,7 @@ Docker adalah platform kontainerisasi yang paling populer dan sering digunakan. 
         localhost:3001
 
     <p align="center">
-    <img src="img/9.png" width="80%" height="auto">
+    <img src="img/10.png" width="80%" height="auto">
     </p>
 
 
