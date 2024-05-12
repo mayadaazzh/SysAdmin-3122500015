@@ -1,5 +1,5 @@
 ﻿<div align="center">
-  <h1 style="text-align: center;">LAPORAN WORKSHOP ADMINISTRASI JARINGAN<br>Tugas 6: Arsitektur web browser dan web server</h1>
+  <h1 style="text-align: center;">LAPORAN WORKSHOP ADMINISTRASI JARINGAN<br>Tugas 6</h1>
   <h4 style="text-align: center;">Dosen Pengampu : Dr. Ferry Astika Saputra, S.T., M.Sc.</h4>
 </div>
 
