@@ -9,6 +9,9 @@
 | TUGAS 4 |  _[KLICK HERE](https://github.com/mayadaazzh/SysAdmin-3122500015/tree/main/Tugas-Keempat)_ |
 | TUGAS 5 |  _[KLICK HERE](https://github.com/mayadaazzh/SysAdmin-3122500015/tree/main/Tugas-Kelima)_ |
 | TUGAS 6 |  _[KLICK HERE](https://github.com/mayadaazzh/SysAdmin-3122500015/tree/main/Tugas-Keenam)_ |
+| TUGAS 7 |  _[KLICK HERE](https://github.com/mayadaazzh/SysAdmin-3122500015/tree/main/Tugas-Ketujuh)_ |
+| TUGAS CHARTER (KELOMPOK) |  _[KLICK HERE](https://github.com/mayadaazzh/SysAdmin-3122500015/tree/main/Tugas-Charter)_ |
+
 
 
 ### ANGGOTA KELOMPOK
